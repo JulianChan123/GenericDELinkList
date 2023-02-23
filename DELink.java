@@ -1,3 +1,8 @@
+/**
+ * @author Julian Chan Palomo
+ * @author Ruth Castro Acosta
+ */
+
 public class DELink<T> {
     private T dData;
     private DELink<T> next; 

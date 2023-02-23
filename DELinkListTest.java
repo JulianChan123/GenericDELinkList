@@ -1,5 +1,14 @@
+/**
+ * @author Julian Chan Palomo
+ * @author Ruth Castro Acosta
+ */
+
 public class DELinkListTest {
     
+    /**
+     * Method to test the DELinkList class
+     * @param args
+     */
     public static void main(String[] args) {
         DELinkList<Double> list = new DELinkList<Double>(); 
         list.insertFirst(4.99);

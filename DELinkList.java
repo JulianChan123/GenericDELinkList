@@ -1,4 +1,10 @@
-class DELinkList<T> {
+
+/**
+ * @author Julian Chan Palomo
+ * @author Ruth Castro Acosta
+ */
+
+public class DELinkList<T> {
     private DELink<T> first;
     private DELink<T> last; 
     
@@ -7,10 +13,19 @@ class DELinkList<T> {
         last = null;
     }
 
+    
+    /** 
+     * Method to check if the list is empty
+     * @return boolean
+     */
     public boolean isEmpty() {
         return (first==null);
     }
 
+    /** 
+     * Method to insert a new link at the beginning of the list
+     * @param dd
+     */
     public void insertFirst(T dd) { 
         DELink<T> newLink = new DELink<T>(dd);
         if(isEmpty())
@@ -19,6 +34,10 @@ class DELinkList<T> {
         first = newLink;
     }
 
+    /** 
+     * Method to insert a new link at the end of the list
+     * @param dd
+     */
     public void insertLast(T dd) { 
         DELink<T> newLink = new DELink<T>(dd);
         if(isEmpty())
@@ -28,16 +47,19 @@ class DELinkList<T> {
         last = newLink;
     }
 
-
-    public DELink<T> deleteFirst() {
-        DELink<T> temp = first;
+    /** 
+     * Method to delete the first link of the list
+     */
+    public void deleteFirst() {
         if(first.getNext() == null)
             last = null;
-        first = first.getNext();
-        return temp;    
+        first = first.getNext();    
     }
 
-    public T deleteLast() {
+    /** 
+     * Method to delete the last link of the list
+     */
+    public void deleteLast() {
         DELink<T> current = first;
         DELink<T> previous = first;
         while(current.getNext() != null) {
@@ -46,9 +68,11 @@ class DELinkList<T> {
         }
         last = previous;
         last.setNext(null);
-        return current.getdData();
     }
 
+    /** 
+     * Method to display the list
+     */
     public void displayList() {
         System.out.print("List (first--> ");
         DELink<T> current = first;
@@ -60,16 +84,26 @@ class DELinkList<T> {
     }
 
     //1
+    /**
+     * Method to find the first element of the list
+     */
     public T getFirst() {
         return first.getdData();
     }
 
     //1
+    /**
+     * Method to find the last element of the list
+     */
     public T getLast() {
         return last.getdData();
     }
 
     //2
+    /**
+     * Method to find the size of the list
+     * @return size
+     */
     public int getSize(){
         int size = 0;
         DELink<T> current = first;
@@ -79,7 +113,13 @@ class DELinkList<T> {
         }
         return size;
     }
+
     //3
+    /**
+     * Method to insert a new data in order
+     * @param dd
+     */
+     
     public void insertInOrder(T dd) {
         DELink<T> newLink = new DELink<T>(dd);
         DELink<T> current = first;
@@ -95,7 +135,13 @@ class DELinkList<T> {
             newLink.setNext(current);
         }
     }
+
     //4
+    /**
+     * Method to update the old value to the new value
+     * @param oldValue
+     * @param newValue
+     */
     public void updateOldtoNew(T oldValue, T newValue) {
         DELink<T> current = first;
         while (current != null) {
@@ -109,6 +155,11 @@ class DELinkList<T> {
     }
 
     //5
+    /**
+     * Method to update the data in the index position
+     * @param key
+     * @param index
+     */
     public void updatedData(T key, int index) {
         DELink<T> current = first;
         int cont = 0;
@@ -125,6 +176,10 @@ class DELinkList<T> {
     }
 
     //6
+    /**
+     * Method to delete a data
+     * @param key
+     */
     public void deleteKey(T key) {
         DELink<T> current = first;
         DELink<T> previous = first;
@@ -143,6 +198,10 @@ class DELinkList<T> {
     }
 
     //7
+    /**
+     * Method to delete a data in the index position
+     * @param index
+     */
     public void deleteAt(int index) {
         DELink<T> current = first;
         if (isEmpty()) {
@@ -166,12 +225,21 @@ class DELinkList<T> {
     }
 
     //8
+    /**
+     * Method to delete all the list
+     */
     public void deleteAll() {
         first = null;
         last = null;
     }
 
     //9
+    /**
+     * Method to find the position of a data
+     * @param value
+     * @return cont
+     * @return -1 if the data is not found
+     */
     public int findPosition(T value) {
         DELink<T> current = first;
         int cont = 0;
